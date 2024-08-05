@@ -1,0 +1,13 @@
+
+services:
+  django-app:
+    entrypoint: "tail -f /dev/null"
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    environment:
+      - DJANGO_ENV:develop
+    volumes:
+      - '.:/app'
+    ports:
+      - "8080:8080"
