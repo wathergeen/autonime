@@ -16,5 +16,9 @@ tests:
 	cd src && ${RUNNER_COMMAND} python manage.py test -v 3 --keepdb --settings=test_settings --nomigrations
 
 migrate:
-	@ echo migrate
+	@ echo Execute non applied migrations
 	cd src && ${RUNNER_COMMAND} python manage.py migrate
+
+migrations:
+	@ echo Generete migration files
+	cd src && ${RUNNER_COMMAND} python manage.py makemigrations
